@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Bizda bor mualliflar ro'yhati</h1>
+    <br>
+    <br>
+    {% for i in mualliflar %}
+    <h3>{{i.ism}}, {{i.yosh}}</h3>
+    <button><a href="/muallif/{{i.id}}/">O'chirish</a></button>
+    <button><a href="/muallif/{{i.id}}/edit/">Tahrirlash</a></button>
+    {% endfor %}
+    <br>
+    <br>
+    <br>
+    <form method="post" action="/mualliflar/">{% csrf_token %}
+        <input type="text" placeholder="Ismingiz" name="i">
+        <input type="number" placeholder="Yoshingiz" name="y">
+        <input type="number" placeholder="Kitoblaringiz soni" name="k_s">
+        <select name="live">
+            <option value="True">Tirik</option>
+            <option value="False">O'lik</option>
+        </select>
+        <select name="jins">
+            <option value="Erkak">Erkak</option>
+            <option value="Ayol">Ayol</option>
+        </select>
+        <button type="submit">Qo'shish</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>Studentni tahrirlang: </h2>
+    <br>
+    <br>
+    <form method="post" action="/student/{{s.id}}/edit/">{% csrf_token %}
+        <input type="text" value="{{s.ism}}" name="i">
+        <input type="text" value="{{s.guruh}}" name="g">
+        <input type="text" value="{{s.kitob_soni}}" name="k_s">
+        <select name="b">
+            <option value="True">Ha</option>
+            <option value="False">Yo'q</option>
+        </select>
+        <button type="submit">O'zgartir</button>
+    </form>
+</body>
+</html>

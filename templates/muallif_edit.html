@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>Muallifni tahrirlash: </h2>
+    <br>
+    <br>
+    <form method="post" action="/muallif/{{m.id}}/edit/">{% csrf_token %}
+        <input type="text" value="{{m.ism}}" name="i">
+        <input type="number" value="{{m.yosh}}" name="y">
+        <input type="number" value="{{m.kitoblar_soni}}" name="k_s">
+        <input type="text" value="{{m.jins}}" name="j">
+        <button type="submit">O'zgartirish</button>
+    </form>
+</body>
+</html>

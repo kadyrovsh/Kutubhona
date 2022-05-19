@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Bizda bor kitoblar ro'yhati</h1>
+    <br>
+    <br>
+    {% for i in kitoblar %}
+    <h3>{{i.nom}}, {{i.muallif}}</h3>
+    <button type="submit"><a href="/kitob/{{i.id}}/edit/">Tahrirlash</a></button>
+    {% endfor %}
+    <br>
+    <br>
+</body>
+</html>

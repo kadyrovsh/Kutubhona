@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Tanlangan studentni ma'lumotlari: </h1>
+    <br>
+    <br>
+    <h2>Ismi - {{st.ism}}</h2>
+    <br>
+    <h2>Guruhi - {{st.guruh}}</h2>
+    <br>
+    <h2>GUvohnoma - {{st.guvohnoma}}</h2>
+    <br>
+    <h2>Kitoblar soni - {{st.kitob_soni}}</h2>
+    <br>
+    <h2>Bitiruvchi {{st.bitiruvchi}}</h2>
+    <br>
+    <br>
+    <form method="post" action="/talabalar/">{% csrf_token %}
+        <input type="text" placeholder="Ismingiz" name="i">
+        <input type="text" placeholder="Guruhingiz" name="g">
+        <input type="text" placeholder="Guvohnoma" name="gv">
+        <input type="number" placeholder="Kitoblaringiz soni" name="k_s">
+        <button type="submit">Qo'shish</button>
+    </form>
+</body>
+</html>

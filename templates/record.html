@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>Bizda bor recordlar ro'yhati</h1>
+    <br>
+    <br>
+    {% for i in records %}
+    <h3>{{i.student}}, {{i.kitob.nom}}, {{i.sana}}, Qaytardi : {{i.qaytardi}}</h3>
+    <button><a href="/record/{{i.id}}/">O'chirish</a></button>
+    {% endfor %}
+    <br>
+    <br>
+    <form method="post" action="/recordlar/">{% csrf_token %}
+        <select name="s">
+            {% for talaba in talabalar %}
+            <option value="{{talaba.id}}">{{talaba.ism}}</option>
+            {% endfor %}
+        </select>
+        <select name="k">
+            {% for kitob in kitoblar %}
+            <option value="{{kitob.id}}">{{kitob.nom}}</option>
+            {% endfor %}
+        </select>
+        <input type="date" placeholder="Sana" name="sana">
+        <select name="q">
+            <option value="Ha">Qaytardi</option>
+            <option value="Yo'q">Qaytarmadi</option>
+        </select>
+        <input type="date" placeholder="Qaytarish sanasi" name="q_s">
+        <button type="submit">Qo'shish</button>
+    </form>
+</body>
+</html>
